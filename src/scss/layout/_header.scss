@@ -1,0 +1,72 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header {
+
+    @include m.tablet{
+        // fijar el nav
+        &.fijo{
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            // sombra
+            box-shadow: 0px 5px 5px 0px rgba(184,178,178,0.75);
+            -webkit-box-shadow: 0px 5px 5px 0px rgba(184,178,178,0.75);
+            -moz-box-shadow: 0px 5px 5px 0px rgba(184,178,178,0.75);
+        }     
+    }
+   
+
+    background-color: v.$negro;
+    padding: 2rem 0rem;
+
+    h1{
+        color: v.$blanco;
+        text-align: center;
+    }
+
+    .contenido-header{
+       @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       }
+    }
+}
+
+
+.navegacion-principal{
+
+    margin-top: 2rem;
+
+     @include m.tablet{
+        display: flex;
+        column-gap: 2rem;
+        margin-top: 0;
+    }
+    a{
+
+        @include m.tablet{
+            margin: 0;
+        }
+
+        text-align: center;
+        display: block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        margin-bottom: 2rem;
+        font-size: 2.4rem;
+
+        // el simobolo $ le dice a SASS que el hover debe compilar con el enlace a
+
+        &:hover{
+            background: v.$azul;
+        }
+    }
+}
+
+
+// .prueba{
+//     @include m.heading(v.$verde);
+// } 

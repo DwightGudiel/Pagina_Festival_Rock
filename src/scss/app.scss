@@ -1,0 +1,30 @@
+/*
+==================================== 
+        sintaxis vieja
+====================================
+*/
+
+// con @import: importamos archivo externos comolo es _variables.scss
+// @import 'base/variables';
+
+// importamos  _contenido.scss
+// @import 'contenido/contenido';
+
+
+
+/*
+==================================== 
+        sintaxis nueva
+====================================
+*/
+// use solo crea instancias locales, en donde usemos esas instancias hay que importar con @use 
+
+
+// importamos carpeta base
+@use  'base';
+
+// importamos  carpeta layout
+@use 'layout';
+
+
+

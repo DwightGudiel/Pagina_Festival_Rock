@@ -1,0 +1,50 @@
+@use 'variables' as v;
+
+// @mixin heading($color) {
+//     color: $color;
+// }
+
+@mixin telefonoSmall {
+    @media (min-width: v.$telefonoSmall) {
+        @content;// @content nos permite pasar codigo por medio de llaves 
+    }
+}
+
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;// @content nos permite pasar codigo por medio de llaves 
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;// @content nos permite pasar codigo por medio de llaves 
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;// @content nos permite pasar codigo por medio de llaves 
+    }
+}
+
+
+@mixin desktopXL  {
+    @media (min-width: v.$desktopXL) {
+        @content;// @content nos permite pasar codigo por medio de llaves 
+    }
+}
+
+@mixin grid($columnas,$gap) {
+    display: grid;
+    grid-template-columns: repeat($columnas,1fr);
+    gap:$gap;
+}
+
+
+@mixin resetear-lista{
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}

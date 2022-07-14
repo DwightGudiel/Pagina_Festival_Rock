@@ -1,0 +1,96 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.lineup{
+    background-color: v.$rosa;
+    padding: 5rem 0;
+
+    h3,p{
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    .dia{
+        text-transform: uppercase;
+        margin: 5rem 0;
+    }
+}
+
+.escenarios-contenedor {
+
+    @include m.tablet{ // query
+        @include m.grid(2,5rem); // grid 2 columnas
+    }
+  
+
+    p{
+        color: v.$negro;
+        font-size: 2.5rem;
+    }
+
+   
+}
+
+.escenario{
+    margin-top: 2rem;
+
+    p{
+
+        &::after{ // despues del p agregamos el siguiente css
+            content: ''; // after siempre llava un content
+            display: block;
+            width: 20rem;
+            height: 10rem;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center; // centrar la imagen
+            margin:2rem auto 0 auto;
+        
+        }
+    }
+}
+
+// agregamos icono edm
+.edm .nombre-escenario:after {
+    background-image: url(../img/icono_edm.png);
+}
+
+// agregamos icono rock
+.rock .nombre-escenario:after {
+    background-image: url(../img/icono_edm.png);
+}
+
+// estilos a los lineup
+.calendario{
+
+    padding-left:  0;
+
+    li{
+        @include m.resetear-lista;
+        padding: 2rem;
+        font-weight: bold;
+       
+        span{
+            font-weight: normal;
+        }
+    }
+
+ 
+}
+
+// color de fondo a los line up
+.bg-verde{
+    background-color: v.$verde;
+
+    li:nth-child(odd){
+        background-color: darken(v.$verde,20%);
+    }
+}
+
+.bg-amarillo{
+    background-color: v.$amarillo;
+
+    li:nth-child(odd){
+        background-color: darken(v.$amarillo,20%);
+    }
+}

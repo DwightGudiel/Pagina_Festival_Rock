@@ -1,0 +1,55 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video{
+    position: relative;
+    max-height: 60rem;
+    min-height: 50rem;
+    // La propiedad overflow permite regular la visiblidad de los contenidos que sobresalen de una caja html. Permite regular si los contenidos que sobresalen se seguirán viendo.
+
+    // hidden oculta ese contenido que sobresale del contendor
+    overflow: hidden;
+  
+    .overlay{
+        position: absolute;
+        background: rgb(160,0,255);
+        background: linear-gradient(90deg, rgba(160,0,255,0.5) 0%, rgba(255,6,224,0.3) 100%);
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    video{
+        //z-index indica el orden de un elemento posicionado y sus descendientes. Cuando varios elementos se superponen, los elementos con mayor valor z-index cubren aquellos con menor valor. 
+
+        z-index: 1;
+        @include m.desktop{
+            width: 100%;
+        }
+       
+        display: block;
+    }
+}
+
+.contenido-video{
+
+    h2{
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+
+    p{
+        color: v.$blanco;
+        background: v.$rosa;
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        font-size: 2.4rem;
+        margin: 0;
+    }
+
+
+}

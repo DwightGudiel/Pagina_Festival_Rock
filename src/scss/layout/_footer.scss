@@ -1,0 +1,52 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.footer{
+    background-color: v.$negro;
+    padding: 2rem;
+
+    .copyright{
+        text-align: center;
+        color: v.$blanco;
+        text-transform: uppercase;
+    }
+}
+
+.footer-contenido{
+    padding: 2rem;
+    border-bottom: 1px solid v.$blanco;
+
+    h3,h1{
+        text-align: center;
+        color: v.$blanco;
+        margin: 0;
+    }
+
+    h3{
+        text-transform: uppercase;
+        font-size: 2.2rem;
+    }
+
+    @include m.tablet{
+        @include m.grid(2,2rem);
+        place-items: center;
+    }
+    
+    .icono-enlace{
+        display: inline-block;
+    }
+
+    .contenido-iconos{
+        margin-top: 3rem;
+
+        @include m.tablet{
+            margin-top: 0;
+        }
+        
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+

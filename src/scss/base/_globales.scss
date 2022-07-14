@@ -1,0 +1,74 @@
+@use 'variables' as v;
+
+/* para poder usar rem mas facil */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    /* para usar mejor box model */
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: v.$fuente_principal;
+
+    // fija el modal de imagen
+    &.fijar-modal{
+        overflow: hidden;
+    }
+
+    // para que al fijar el nav no de un salto grande y se muestre donde le corresponde
+    &.bodyScroll{
+        padding-top: 8.6rem;
+    }
+    
+}
+
+
+/* para usar mejor box model */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+p{
+    font-size: 2rem;
+    color: v.$negro;
+    line-height: 1.5;
+}
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3{
+    margin:  0 0 5rem 0;
+}
+
+h1{
+ font-size: 4rem;
+ margin:  0;
+}
+
+h2{
+    font-size: 3.6rem;
+    margin:  0;
+}
+
+h3{
+    font-size: 3rem;
+}
+
+
+.contenedor{
+    width: min(120rem,95%);
+    margin: 0 auto;
+}
+
+
